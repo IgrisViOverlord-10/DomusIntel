@@ -1,9 +1,7 @@
-# 🏙️ Bangalore House Price Prediction using Machine Learning
+# 🏙️ EstateIQ – Bangalore House Price Prediction System
 
 A Flask-based machine learning web application that predicts house prices in Bangalore using property-related features such as location, total square feet, BHK, and bathrooms.  
 The project demonstrates a complete end-to-end ML workflow including data preprocessing, feature engineering, regression model evaluation, and deployment through an interactive web interface.
-
-**Ridge Regression** was selected as the final model for its stability, regularization capability, and reliable prediction performance.
 
 ---
 
@@ -42,27 +40,12 @@ The project demonstrates a complete end-to-end ML workflow including data prepro
 
 # ✨ Core Features
 
-## 🧠 Machine Learning Module
-- Data preprocessing and cleaning  
-- Feature engineering and transformation  
-- Outlier detection and removal  
-- Multi-model regression training  
-- Model evaluation and comparison  
-- Final model serialization using Pickle  
-
-## 🌐 Web Application Module
-- Flask-based interactive web interface  
-- Real-time house price prediction  
-- Backend integration with trained ML model  
-- User-friendly property input workflow  
-- Dynamic prediction result rendering  
-
-## 📊 Data Analysis & Processing
-- Location-wise feature analysis  
-- Price per square foot calculation  
-- BHK extraction and transformation  
-- Categorical feature encoding  
-- Outlier filtering based on domain logic  
+- Real-time Bangalore house price prediction  
+- End-to-end machine learning workflow  
+- Feature engineering and outlier handling  
+- Multiple regression model evaluation  
+- Flask-based interactive web application  
+- Trained ML model integration for predictions  
 
 ---
 
@@ -76,49 +59,23 @@ The project demonstrates a complete end-to-end ML workflow including data prepro
 
 ### ✅ Final Model Selection
 
-Although Linear Regression achieved similar performance, **Ridge Regression** was selected as the final model due to:
-
-- Better handling of multicollinearity  
-- Reduced overfitting risk  
-- More stable prediction behavior  
-- Improved generalization capability  
+Although Linear Regression achieved similar accuracy, **Ridge Regression** was selected for its better generalization capability, stability against overfitting, and improved handling of multicollinearity. 
 
 ---
 
 # ⚙️ Development Workflow
 
-## 📌 Phase 1 – Data Processing & Model Development
+## 📌 Model Development
+- Data cleaning and preprocessing  
+- Feature engineering & outlier removal  
+- Regression model training and evaluation  
+- Final Ridge Regression model selection  
 
-- Dataset cleaning and preprocessing  
-- Missing value handling  
-- Feature engineering implementation  
-- Outlier detection and removal  
-- One-Hot Encoding for categorical variables  
-- Training multiple regression models  
-- Model evaluation and comparison  
-- Final model selection  
-
-## 📌 Phase 2 – Web Application Integration
-
+## 📌 Web Application Integration
 - Model serialization using Pickle (`.pkl`)  
 - Flask backend integration  
-- Property input form development  
-- Prediction endpoint creation  
-- Real-time prediction handling  
-- Frontend result rendering  
-
----
-
-# ⚙️ Data Preprocessing Pipeline
-
-- Missing value handling using domain-specific logic  
-- Removal of irrelevant columns  
-- One-Hot Encoding for categorical variables  
-- Feature scaling and normalization  
-- Outlier filtering based on:
-  - Square feet per BHK
-  - Price per square foot
-  - Location-based constraints
+- Property input form handling  
+- Real-time prediction rendering  
 
 ---
 
@@ -184,15 +141,11 @@ http://127.0.0.1:5000/
 # 🧠 Skills Demonstrated
 
 - Machine Learning workflow implementation  
-- Data preprocessing & cleaning  
-- Feature engineering techniques  
-- Regression model development  
-- Model evaluation & comparison  
-- Outlier detection and handling  
-- Flask web application integration  
-- Backend ML prediction systems  
-- Real-time inference workflow  
-- End-to-end ML deployment concepts  
+- Data preprocessing & feature engineering  
+- Regression model evaluation  
+- Flask web application development  
+- Backend ML integration  
+- Real-time prediction systems  
 
 ---
 
@@ -206,5 +159,9 @@ http://127.0.0.1:5000/
 - Enhance UI/UX responsiveness  
 
 ---
+
+# 🏁 Project Note
+
+> This project was developed as part of an academic machine learning project to demonstrate practical understanding of data preprocessing, regression modeling, feature engineering, and Flask-based ML deployment.
 
 ---
