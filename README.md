@@ -1,131 +1,157 @@
 # 🏙️ Bangalore House Price Prediction using Machine Learning
 
-## 📌 Project Overview
+A Flask-based machine learning web application that predicts house prices in Bangalore using property-related features such as location, total square feet, BHK, and bathrooms.  
+The project demonstrates a complete end-to-end ML workflow including data preprocessing, feature engineering, regression model evaluation, and deployment through an interactive web interface.
 
-This project predicts house prices in Bangalore using machine learning techniques based on key features such as location, total square feet, number of bedrooms (BHK), and bathrooms.
-
-Developed in **2023 as an academic group project**, it demonstrates an end-to-end ML workflow from data preprocessing and feature engineering to model training and deployment using a Flask web application.
-
----
-
-## 🕒 Project Context
-
-This project is preserved in its original working state to showcase my early hands-on experience with:
-
-* Data preprocessing
-* Feature engineering
-* Regression-based model building
-* Model deployment using Flask
+**Ridge Regression** was selected as the final model for its stability, regularization capability, and reliable prediction performance.
 
 ---
 
-## 🚀 Features
+# 🚀 Tech Stack
 
-* Real-time house price prediction based on user inputs
-* End-to-end machine learning pipeline
-* Advanced preprocessing and outlier handling
-* Model comparison (Linear, Lasso, Ridge)
-* Flask-based web interface for predictions
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)](https://numpy.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ---
 
-## 🧠 Machine Learning Workflow
+# 🏗 Workflow & Prediction Pipeline
 
-```text
-Data Collection → Data Cleaning → Feature Engineering → Outlier Removal → Encoding & Scaling →
-Model Training → Model Evaluation → Model Selection (Ridge) → Model Saving → Flask Integration → Prediction Output
+```bash
+👤 User Enters Property Details
+          ↓
+🌐 Flask Web Interface
+          ↓
+⚡ Backend Data Processing
+          ↓
+🧹 Data Preprocessing Pipeline
+          ↓
+🧠 Trained Ridge Regression Model
+          ↓
+📊 House Price Prediction
+          ↓
+✅ Predicted Price Displayed To User
 ```
 
 ---
 
-## 📊 Dataset & Features
+# ✨ Core Features
 
-The dataset includes the following key attributes:
+## 🧠 Machine Learning Module
+- Data preprocessing and cleaning  
+- Feature engineering and transformation  
+- Outlier detection and removal  
+- Multi-model regression training  
+- Model evaluation and comparison  
+- Final model serialization using Pickle  
 
-* Location
-* Total Square Feet
-* Number of Bedrooms (BHK)
-* Number of Bathrooms
-* Price
+## 🌐 Web Application Module
+- Flask-based interactive web interface  
+- Real-time house price prediction  
+- Backend integration with trained ML model  
+- User-friendly property input workflow  
+- Dynamic prediction result rendering  
+
+## 📊 Data Analysis & Processing
+- Location-wise feature analysis  
+- Price per square foot calculation  
+- BHK extraction and transformation  
+- Categorical feature encoding  
+- Outlier filtering based on domain logic  
 
 ---
 
-## 🔧 Feature Engineering
+# 🧪 Machine Learning Models & Results
 
-* Extracted BHK from the `size` column
-* Converted range values (e.g., 1000–1200 sqft) into numeric format
-* Created a new feature: **price per sqft**
-* Grouped low-frequency locations into an `"other"` category
+| Model | R² Score |
+|--------|----------|
+| Linear Regression | 0.8234 |
+| Lasso Regression | 0.8128 |
+| Ridge Regression | 0.8234 |
+
+### ✅ Final Model Selection
+
+Although Linear Regression achieved similar performance, **Ridge Regression** was selected as the final model due to:
+
+- Better handling of multicollinearity  
+- Reduced overfitting risk  
+- More stable prediction behavior  
+- Improved generalization capability  
 
 ---
 
-## ⚙️ Data Preprocessing
+# ⚙️ Development Workflow
 
-- Handled missing values using domain-specific logic  
-- Removed irrelevant columns  
-- Applied One-Hot Encoding for categorical variables  
-- Standardized numerical features  
-- Performed outlier removal based on:
+## 📌 Phase 1 – Data Processing & Model Development
+
+- Dataset cleaning and preprocessing  
+- Missing value handling  
+- Feature engineering implementation  
+- Outlier detection and removal  
+- One-Hot Encoding for categorical variables  
+- Training multiple regression models  
+- Model evaluation and comparison  
+- Final model selection  
+
+## 📌 Phase 2 – Web Application Integration
+
+- Model serialization using Pickle (`.pkl`)  
+- Flask backend integration  
+- Property input form development  
+- Prediction endpoint creation  
+- Real-time prediction handling  
+- Frontend result rendering  
+
+---
+
+# 🔧 Feature Engineering Techniques
+
+- Extracted **BHK** values from the `size` column  
+- Converted square feet ranges into numeric values  
+- Created a new feature: **price per sqft**  
+- Grouped low-frequency locations into an `"other"` category  
+
+---
+
+# ⚙️ Data Preprocessing Pipeline
+
+- Missing value handling using domain-specific logic  
+- Removal of irrelevant columns  
+- One-Hot Encoding for categorical variables  
+- Feature scaling and normalization  
+- Outlier filtering based on:
   - Square feet per BHK
   - Price per square foot
-  - Location-based filtering
+  - Location-based constraints
 
 ---
 
-## 🤖 Algorithms Used
+# 📂 Repository Structure
 
-| Algorithm         | Description            | Purpose               |
-| ----------------- | ---------------------- | --------------------- |
-| Linear Regression | Basic regression model | Baseline              |
-| Lasso Regression  | L1 Regularization      | Feature selection     |
-| Ridge Regression  | L2 Regularization      | Final model selection |
-
----
-
-## 📈 Model Performance
-
-| Model             | R² Score |
-| ----------------- | -------- |
-| Linear Regression | 0.8234   |
-| Lasso Regression  | 0.8128   |
-| Ridge Regression  | 0.8234   |
-
----
-
-## 📌 Model Selection Insight
-
-Although Linear Regression achieved similar performance, **Ridge Regression** was selected because:
-
-* Reduces overfitting
-* Handles multicollinearity effectively
-* Produces more stable predictions for deployment
+```text
+Bangalore-House-Price-Prediction/
+│
+├── Server/
+│   ├── server.py
+│   ├── util.py
+│   └── artifacts/
+│
+├── client/
+├── model/
+├── notebooks/
+├── Snapshots/
+├── README.md
+└── requirements.txt
+```
 
 ---
 
-## ⚙️ ML Pipeline
-
-The final pipeline consists of:
-
-* One-Hot Encoding (Location)
-* Standard Scaling
-* Ridge Regression
-
----
-
-## 🖥️ Web Application
-
-The trained model is deployed using a Flask application (`server.py`).
-
-### Workflow
-
-1. User enters property details
-2. Inputs are preprocessed
-3. Model predicts the house price
-4. Result is displayed on the UI
-
----
-
-## ▶️ Running the Application
+# ▶️ Running the Application
 
 ```bash
 cd Server
@@ -134,49 +160,58 @@ python server.py
 
 Then open in your browser:
 
-```
+```text
 http://127.0.0.1:5000/
 ```
 
 ---
 
-## 📸 Output Screenshots
+# 📸 Project Snapshots
 
-### Input Page
-![Input](Snapshots/Snap-2.png)
-
-### Predicted Price Output
-![Output](Snapshots/Snap-1.png)
-
----
-
-## 💡 Key Highlights
-
-* End-to-end ML project with deployment
-* Strong focus on preprocessing and feature engineering
-* Use of regularization techniques
-* Pipeline-based implementation
-* Real-world dataset application
+| Screenshot | Description |
+|------------|-------------|
+| ![Input Page](Snapshots/Snap-1.png) | Property details input interface |
+| ![Prediction Output](Snapshots/Snap-2.png) | Predicted house price result |
 
 ---
 
-## ⚠️ Limitations
+# 🧠 Skills Demonstrated
 
-* No real-time data integration
-* Limited feature set
-* Model performance depends on dataset quality
-
----
-
-## 🔮 Future Improvements
-
-* Implement advanced models (XGBoost, Neural Networks)
-* Enhance feature engineering
-* Integrate real-time data sources
-* Deploy on cloud platforms (AWS / GCP / Azure)
+- Machine Learning workflow implementation  
+- Data preprocessing & cleaning  
+- Feature engineering techniques  
+- Regression model development  
+- Model evaluation & comparison  
+- Outlier detection and handling  
+- Flask web application integration  
+- Backend ML prediction systems  
+- Real-time inference workflow  
+- End-to-end ML deployment concepts  
 
 ---
 
-## 🏁 Final Note
+# ⚠️ Project Limitations
 
-This project reflects my foundational understanding of machine learning workflows, including preprocessing, model selection, and deployment using Flask.
+- No real-time property data integration  
+- Limited feature set for prediction  
+- Prediction quality depends on dataset accuracy  
+- Performance may vary across unseen locations  
+
+---
+
+# 🔮 Future Improvements
+
+- Implement advanced models (XGBoost, Random Forest, Neural Networks)  
+- Improve feature engineering techniques  
+- Integrate live real-estate market data  
+- Deploy application on cloud platforms (AWS / Azure / GCP)  
+- Add interactive analytics dashboard  
+- Enhance UI/UX responsiveness  
+
+---
+
+# 🏁 Project Note
+
+> This project was originally developed in 2023 as an academic group project and is preserved in its original working state to showcase foundational machine learning concepts, preprocessing workflows, model selection techniques, and Flask-based deployment integration.
+
+---
